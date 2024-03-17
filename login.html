@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styleLogin.css" rel="styleSheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="menu">
+        <p class="title">MAESTER ON DUTY</p>
+        <div class="buttons">
+            <a href="#about"><button class="btn">Home</button> </a>
+            <button class="btn">About</button>
+            <button class="btn">Donate</button>
+            <button class="btn">Contact</button>
+        </div>
+        <button class="btn signin">Sign In</button>
+    </div>
+    <img class="bg" src="/images/login.png">
+    <div class="app">
+        <div class="task">
+            <div class="donor activeTask" onclick="selectRole('donor')">Donor</div>
+        <div class="giver" onclick="selectRole('hospital')">Hospital</div>
+        </div>
+        <form class="info" action="/login" method="POST">
+            <!-- <label for="role">Select your role:</label>
+            <select name="role" id="role">
+                <option value="donor">Donor</option>
+                <option value="hospital">Hospital</option>
+            </select><br> -->
+            <input type="hidden" id="roleInput" name="role" value="donor">
+            <p class="hello">DONOR</p>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required><br>
+            <button class="bigBtn" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+<script src="/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/conductor-js/0.1.0/conductor.min.js"></script>
+</html>
